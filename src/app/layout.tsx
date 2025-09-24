@@ -1,7 +1,10 @@
 import './globals.scss'
+import './variables.scss'
 
 import type { Metadata } from 'next'
 import { Bruno_Ace_SC } from 'next/font/google'
+
+import Header from '@/components/Header'
 
 const BrunoAceSCSans = Bruno_Ace_SC({
   weight: '400',
@@ -21,7 +24,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${BrunoAceSCSans.variable}`}>{children}</body>
+      <body className={`${BrunoAceSCSans.variable}`}>
+        <Header />
+        {children}
+      </body>
     </html>
   )
 }
